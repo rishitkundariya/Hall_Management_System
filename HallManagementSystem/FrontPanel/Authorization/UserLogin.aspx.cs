@@ -12,7 +12,10 @@ public partial class FrontPanel_Login_UserLogin : System.Web.UI.Page
     #region Page Load
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if(Session["UserID"]!= null && Session["AdminID"] == null )
+        {
+           Response.Redirect("~/FrontPanel/Hall/HallList.aspx");
+        }
     }
     #endregion
 
