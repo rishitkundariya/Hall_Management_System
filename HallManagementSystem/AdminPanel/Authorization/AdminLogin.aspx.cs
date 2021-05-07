@@ -12,7 +12,10 @@ public partial class AdminPanel_Login_AdminLogin : System.Web.UI.Page
     #region Page Load
     protected void Page_Load(object sender, EventArgs e)
     {
-
+            if(Session["UserID"]== null && Session["AdminID"] != null )
+            {
+               Response.Redirect("~/AdminPanel/Dashboard/Dashboard.aspx");
+            }
     }
     #endregion
 
